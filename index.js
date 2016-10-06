@@ -4,7 +4,7 @@
 
 var xml = require('xmlbuilder'),
     fs = require('fs'),
-    orderCount = 1;
+    orderCount = 15000;
 
 var root = xml.create({"orders":[{"@xmlns": "http://www.demandware.com/xml/impex/order/2006-10-31"}]},
     {"@version": '1.0', "@encoding": 'UTF-8'});
@@ -12,7 +12,7 @@ var root = xml.create({"orders":[{"@xmlns": "http://www.demandware.com/xml/impex
 
 function generateOrders(callback) {
     for(var i = 0; i < orderCount; i++) {
-        var num = Date.now() - Math.floor((Math.random() * 100) + (Math.random() * 100));
+        var num = Date.now() - Math.floor((Math.random() * 100) + (Math.random() * 100) - (Math.random() * 10));
 
         var order = {
             "order": {
