@@ -226,7 +226,7 @@ function generateOrders(callback) {
 }
 
 generateOrders(function() {
-    fs.writeFile("orders6.xml", root.end({
+    fs.writeFile("orders.xml", root.end({
         pretty: true,
         indent: '  ',
         newline: '\n',

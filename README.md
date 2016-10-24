@@ -21,12 +21,13 @@
 ### After run:
 
 1. In the folder root **orders.xml** will appear
-2. You should to import this orders in your BM: 
-⋅⋅* Go to **Merchant Tools >  Ordering >  Import & Export**
-⋅⋅* Click to **Upload** in the **Import & Export Files** section
-⋅⋅* Upload **orders.xml**, return back.
-⋅⋅* Click **imports** in the **Orders (XML)** section
-⋅⋅* Select **orders.xml** in the list and click **Next >>** button
-⋅⋅* After xml validation click **Import** button
-⋅⋅* Wait until your orders will imported (~4-8 minutes)
-⋅⋅* Check your new orders in the **Merchant Tools >  Products and Catalogs >  Products**
+2. You should to import this orders in your BM:
+
+- Go to **Merchant Tools >  Ordering >  Import & Export**
+- Click to **Upload** in the **Import & Export Files** section
+- Upload **orders.xml**, return back.
+- Click **imports** in the **Orders (XML)** section
+- Select **orders.xml** in the list and click **Next >>** button
+- After xml validation click **Import** button
+- Wait until your orders will imported (~4-8 minutes)
+- Check your new orders in the **Merchant Tools >  Products and Catalogs >  Products**
