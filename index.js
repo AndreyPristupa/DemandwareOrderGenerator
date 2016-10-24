@@ -1,10 +1,6 @@
-/**
- * Created by a.prystupa on 05.10.2016.
- */
-
 var xml = require('xmlbuilder'),
     fs = require('fs'),
-    orderCount = 15000;
+    orderCount = process.argv[2] || 15000;
 
 var root = xml.create({"orders":[{"@xmlns": "http://www.demandware.com/xml/impex/order/2006-10-31"}]},
     {"@version": '1.0', "@encoding": 'UTF-8'});
@@ -44,8 +40,8 @@ function generateOrders(callback) {
                 ],
                 "status": [
                     {
-                        "order-status": "OPEN",
-                        "shipping-status": "NOT_SHIPPED",
+                        "order-status": "COMPLETED",
+                        "shipping-status": "SHIPPED",
                         "confirmation-status": "CONFIRMED",
                         "payment-status": "PAID"
                     }
@@ -62,14 +58,14 @@ function generateOrders(callback) {
                                 "lineitem-text": "lol",
                                 "tax-basis": "234.33",
                                 "position": "1",
-                                "product-id": 883360352015,
+                                "product-id": 883360352015, // change IT
                                 "product-name": "Apple",
                                 "quantity": {
                                     "@unit":"",
                                     "#text": "1"
                                 },
                                 "tax-rate": "0.54",
-                                "shipment-id": "00003501",
+                                "shipment-id": "00003501", //change IT
                                 "gift": "false"
                             }
                         ]
@@ -86,7 +82,7 @@ function generateOrders(callback) {
                                 "lineitem-text": "Shipping",
                                 "tax-basis": "34.44",
                                 "item-id": "STANDARD_SHIPPING",
-                                "shipment-id": "00003501",
+                                "shipment-id": "00003501", // change IT
                                 "tax-rate": "0.34"
                             }
                         ]
@@ -99,7 +95,7 @@ function generateOrders(callback) {
                                 "@shipment-id": "00003501",
                                 "status": [
                                     {
-                                        "shipping-status": "NOT_SHIPPED"
+                                        "shipping-status": "SHIPPED"
                                     }
                                 ],
                                 "shipping-method": "001",
@@ -230,11 +226,11 @@ function generateOrders(callback) {
 }
 
 generateOrders(function() {
-    fs.writeFile("orders.xml", root.end({
+    fs.writeFile("orders6.xml", root.end({
         pretty: true,
         indent: '  ',
         newline: '\n',
         allowEmpty: false
     }));
-    console.log("Done");
+    console.log("Done. Order count: " + orderCount);
 });
